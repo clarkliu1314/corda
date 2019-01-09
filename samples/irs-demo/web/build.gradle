@@ -55,6 +55,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'project-report'
 apply plugin: 'application'
+apply plugin: 'net.corda.plugins.cordapp'
 
 configurations {
     demoArtifacts.extendsFrom testRuntime
@@ -70,10 +71,10 @@ dependencies {
     compile("com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version")
     compile project(":client:rpc")
     compile project(":client:jackson")
-	compile project(":finance:workflows")
+	cordapp project(":finance:workflows")
 	// todo cordapp config
-	compile project(":samples:irs-demo:cordapp:contracts")
-	compile project(":samples:irs-demo:cordapp:workflows")
+	cordapp project(":samples:irs-demo:cordapp:contracts")
+	cordapp project(":samples:irs-demo:cordapp:workflows")
 
     testCompile project(":test-utils")
 	//TODO

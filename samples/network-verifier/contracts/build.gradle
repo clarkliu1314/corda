@@ -2,6 +2,7 @@ apply plugin: 'kotlin'
 apply plugin: 'net.corda.plugins.cordapp'
 
 description 'Corda Network Verifier - Contracts'
+
 dependencies {
     cordaCompile project(':core')
 }
@@ -15,4 +16,8 @@ cordapp {
         vendor "R3"
         licence "Open Source (Apache 2)"
     }
+}
+
+jar {
+    baseName 'corda-network-verifier-contracts'
 }

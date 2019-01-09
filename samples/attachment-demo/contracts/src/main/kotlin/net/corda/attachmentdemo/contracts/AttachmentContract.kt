@@ -7,8 +7,6 @@ import net.corda.core.crypto.SecureHash
 import net.corda.core.identity.AbstractParty
 import net.corda.core.transactions.LedgerTransaction
 
-const val ATTACHMENT_PROGRAM_ID = "net.corda.attachmentdemo.AttachmentContract"
-
 class AttachmentContract : Contract {
     override fun verify(tx: LedgerTransaction) {
         val state = tx.outputsOfType<State>().single()
@@ -22,3 +20,6 @@ class AttachmentContract : Contract {
         override val participants: List<AbstractParty> = emptyList()
     }
 }
+
+//TODO
+const val ATTACHMENT_PROGRAM_ID = "net/corda/attachmentdemo/contracts/AttachmentContract"
